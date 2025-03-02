@@ -1,5 +1,3 @@
-`timescale 1ns / 1ps
-
 module Program_counter_tb;
     reg clk;
     reg reset;

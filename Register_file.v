@@ -7,8 +7,8 @@ module Register_file(
     input [1:0] read_adr1,
     input [1:0] read_adr2,
     input [15:0] write_data,
-    output [15:0] read_data1,
-    output [15:0] read_data2
+    output reg [15:0] read_data1,
+    output reg [15:0] read_data2
 );
 
 reg [15:0] reg_file [0:3];

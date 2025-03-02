@@ -20,7 +20,7 @@ wire [7:0] adr = instruction[7:0];
 always @(*)begin
 
     alu_code = 4'b0000;
-    RAM_read = 0;
+    RAM_read = 1;
     Reg_read = 0;
     Reg_write = 0;
     pc_jump = 0;
@@ -38,19 +38,19 @@ always @(*)begin
             reg2 = rs2; // register adress 2
         end
         4'b0100: begin //SUB
-            alu_code = 4'b0100; //The alu code for the ALU
+            alu_code = 4'b0010; //The alu code for the ALU
             Reg_read = 1; // This enables the registers to read the two registers that are needed to subtraction
             Reg_write = 1; //The result of the addition will be stored in the first register value
             reg1 = rs1; //register adress 1
             reg2 = rs2; //register adress 2
         end
-        4'b1000: begin //LOAD
+        4'b0100: begin //LOAD
             RAM_read = 1; // enables the ram to read the data to load
             Reg_write = 1; // enables to register to get ready to store the value 
             reg1 = rs1; // register at which its being stored
             RAM_adr = adr; //adress at the ram that is being read
         end
-        4'b1100: begin //JUMP
+        4'b1000: begin //JUMP
             pc_jump = 1; //signal to PC
             RAM_adr = adr; //adress to jump to
         end

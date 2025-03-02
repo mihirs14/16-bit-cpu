@@ -1,0 +1,197 @@
+$date
+	Sun Mar  2 02:29:34 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module cpu_tb $end
+$var reg 1 ! clk $end
+$var reg 1 " reset $end
+$scope module uut $end
+$var wire 1 ! clk $end
+$var wire 1 # reg_read $end
+$var wire 1 $ reg_write $end
+$var wire 1 " reset $end
+$var wire 16 % reg_2_data [15:0] $end
+$var wire 2 & reg_2_adr [1:0] $end
+$var wire 16 ' reg_1_data [15:0] $end
+$var wire 2 ( reg_1_adr [1:0] $end
+$var wire 1 ) pc_jump $end
+$var wire 1 * pc_branch $end
+$var wire 8 + pc_address [7:0] $end
+$var wire 16 , current_instruction [15:0] $end
+$var wire 1 - branch_check $end
+$var wire 16 . alu_result [15:0] $end
+$var wire 4 / alu_code [3:0] $end
+$var wire 1 0 Reg_wrtie $end
+$var wire 1 1 Reg_read $end
+$var wire 1 2 RAM_read $end
+$var wire 8 3 RAM_adress [7:0] $end
+$scope module CU $end
+$var wire 2 4 rs2 [1:0] $end
+$var wire 2 5 rs1 [1:0] $end
+$var wire 4 6 opcode [3:0] $end
+$var wire 16 7 instruction [15:0] $end
+$var wire 1 - branch_check $end
+$var wire 8 8 adr [7:0] $end
+$var reg 8 9 RAM_adr [7:0] $end
+$var reg 1 2 RAM_read $end
+$var reg 1 1 Reg_read $end
+$var reg 1 0 Reg_write $end
+$var reg 4 : alu_code [3:0] $end
+$var reg 1 * pc_branch $end
+$var reg 1 ) pc_jump $end
+$var reg 2 ; reg1 [1:0] $end
+$var reg 2 < reg2 [1:0] $end
+$upscope $end
+$scope module PC $end
+$var wire 1 * branch $end
+$var wire 8 = branch_adr [7:0] $end
+$var wire 1 ! clk $end
+$var wire 1 ) jump $end
+$var wire 8 > jump_adr [7:0] $end
+$var wire 1 " reset $end
+$var reg 8 ? address [7:0] $end
+$var reg 8 @ program [7:0] $end
+$upscope $end
+$scope module RF $end
+$var wire 1 ! clk $end
+$var wire 2 A read_adr1 [1:0] $end
+$var wire 2 B read_adr2 [1:0] $end
+$var wire 1 # read_en $end
+$var wire 1 " reset $end
+$var wire 2 C write_adr [1:0] $end
+$var wire 1 $ write_en $end
+$var wire 16 D write_data [15:0] $end
+$var reg 16 E read_data1 [15:0] $end
+$var reg 16 F read_data2 [15:0] $end
+$upscope $end
+$scope module alu $end
+$var wire 4 G alu_code [3:0] $end
+$var wire 16 H reg_data1 [15:0] $end
+$var wire 16 I reg_data2 [15:0] $end
+$var reg 16 J accum [15:0] $end
+$var reg 1 - branch_check $end
+$upscope $end
+$scope module ram $end
+$var wire 8 K adr [7:0] $end
+$var wire 1 ! clk $end
+$var wire 1 2 read $end
+$var reg 16 L out [15:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+bx L
+bx K
+bx J
+bx I
+bx H
+bx G
+bx F
+bx E
+bx D
+bx C
+bx B
+bx A
+bx @
+bx ?
+bx >
+bx =
+bx <
+bx ;
+bx :
+bx 9
+bx 8
+bx 7
+bx 6
+bx 5
+bx 4
+bx 3
+x2
+x1
+x0
+bx /
+bx .
+x-
+bx ,
+bx +
+x*
+x)
+bx (
+bx '
+bx &
+bx %
+z$
+z#
+1"
+0!
+$end
+#5000
+b0 +
+b0 ?
+b0 K
+b0 8
+b0 4
+b0 5
+b0 6
+b0 3
+b0 9
+b0 =
+b0 >
+b0 &
+b0 <
+b0 B
+b0 (
+b0 ;
+b0 A
+b0 C
+0*
+0)
+10
+11
+02
+b1000 /
+b1000 :
+b1000 G
+b0 .
+b0 D
+b0 J
+0-
+b0 @
+b0 ,
+b0 7
+b0 L
+b0 %
+b0 F
+b0 I
+b0 '
+b0 E
+b0 H
+1!
+#10000
+0!
+#15000
+1!
+#20000
+0!
+#25000
+1!
+#30000
+0!
+#35000
+1!
+#40000
+0!
+#45000
+1!
+#50000
+0!

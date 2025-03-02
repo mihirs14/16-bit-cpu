@@ -11,6 +11,9 @@ always @(posedge clk)begin
     if (read) begin
         out <= RAM[adr];
     end
+    else begin
+        out <= 16'b1;
+    end
 end
 
 endmodule
