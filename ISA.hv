@@ -3,3 +3,7 @@ parameter SUB = 4'b0010;
 parameter LOAD = 4'b0100;
 parameter JUMP = 4'b1000;
 parameter BRANCH = 4'b1100;
+
+
+
+Fixed the issue with the current instruction and the RAM_adress. Now I need to work on making the ALU and the register file work together better when there is a ADD instruciton, since the ALU already is storing previous reg_data values and the reg_write is 1.

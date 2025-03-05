@@ -19,39 +19,38 @@ wire [7:0] adr = instruction[7:0];
 
 always @(*)begin
 
-    alu_code = 4'b0000;
+    alu_code = 4'bx;
     RAM_read = 1;
-    Reg_read = 0;
+    Reg_read = 1;
     Reg_write = 0;
     pc_jump = 0;
     pc_branch = 0;
-    reg1 = 2'b00;
-    reg2 = 2'b00;
-    RAM_adr = instruction[7:0];
+    reg1 = 2'bx;
+    reg2 = 2'bx;
+    RAM_adr = 8'bx;
 
     case(opcode)
         4'b0000: begin  //ADD
-            alu_code = 4'b1000; //The alu code for the ALU
-            Reg_read = 1; // This enables the registers to read the two registers that are needed to addition
+            alu_code = 4'b1000; //The alu code for the ALU  // This enables the registers to read the two registers that are needed to addition
             Reg_write = 1; //The result of the addition will be stored in the first register value
             reg1 = rs1; // register adress 1
             reg2 = rs2; // register adress 2
         end
-        4'b0100: begin //SUB
-            alu_code = 4'b0010; //The alu code for the ALU
-            Reg_read = 1; // This enables the registers to read the two registers that are needed to subtraction
+        4'b0010: begin //SUB
+            alu_code = 4'b0100; //The alu code for the ALU// This enables the registers to read the two registers that are needed to subtraction
             Reg_write = 1; //The result of the addition will be stored in the first register value
             reg1 = rs1; //register adress 1
             reg2 = rs2; //register adress 2
         end
         4'b0100: begin //LOAD
-            RAM_read = 1; // enables the ram to read the data to load
+            alu_code = 4'b1001;   // enables the ram to read the data to load
             Reg_write = 1; // enables to register to get ready to store the value 
             reg1 = rs1; // register at which its being stored
             RAM_adr = adr; //adress at the ram that is being read
         end
         4'b1000: begin //JUMP
-            pc_jump = 1; //signal to PC
+            pc_jump = 1;
+            Reg_read = 0; //signal to PC
             RAM_adr = adr; //adress to jump to
         end
         4'b1111, 4'b1101, 4'b1110: begin  //BRANCH

@@ -53,7 +53,7 @@ module control_unit_tb;
         instruction = 16'b0100110100000000; 
         branch_check = 0;
         #10;
-        
+        #10;
         
         $finish;
     end

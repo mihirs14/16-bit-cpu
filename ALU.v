@@ -1,4 +1,5 @@
 module ALU (
+    input clk,
     input [3:0] alu_code,
     input [15:0] reg_data1,
     input [15:0] reg_data2,
@@ -11,30 +12,29 @@ always @(*) begin
 branch_check = 0;
 accum = 16'b000000000000000;
 
-case(alu_code)
-    4'b1000: accum = reg_data1 + reg_data2;
-    4'b0100: accum = reg_data1 - reg_data2;
-    4'b1100: begin
-        if(reg_data1 == reg_data2) begin
-            branch_check = 1;
+    case(alu_code)
+        4'b1000: accum = reg_data1 + reg_data2;
+        4'b0100: accum = reg_data1 - reg_data2;
+        4'b1100: begin
+            if(reg_data1 == reg_data2) begin
+                branch_check = 1;
+            end
         end
-    end
-    4'b1101: begin
-        if(reg_data1 < reg_data2) begin
-            branch_check = 1;
+        4'b1101: begin
+            if(reg_data1 < reg_data2) begin
+             branch_check = 1;
+            end
         end
-    end
-    4'b1110: begin
-        if(reg_data1 > reg_data2) begin
-            branch_check = 1;
+        4'b1110: begin
+            if(reg_data1 > reg_data2) begin
+                branch_check = 1;
+            end
         end
-    end
-    default: begin
-        accum = 16'b0;
-        branch_check = 0;
-    end
-endcase
+        default: begin
+            branch_check = 0;
+        end
+    endcase
 
-end
+    end
 
 endmodule
