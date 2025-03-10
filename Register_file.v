@@ -22,7 +22,7 @@ always @(posedge clk)begin
     end
     else if(write_en) begin
         reg_file[write_adr] <= write_data;
-    end
+        end
     end
 always @(*)begin
     if(read_en)begin
@@ -34,17 +34,6 @@ always @(*)begin
         read_data2 <= 16'bx;
     end
 end
-
-// always @(posedge clk)begin
-//     if(read_en)begin
-//         read_data1 <= reg_file[read_adr1];
-//         read_data2 <= reg_file[read_adr2];
-//     end 
-//     else begin
-//         read_data1 <= 16'b0;
-//         read_data2 <= 16'b0;
-//     end
-// end
 
 
 

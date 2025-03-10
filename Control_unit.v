@@ -1,12 +1,11 @@
 module Control_unit(
     input [15:0] instruction,
-    input branch_check,
+    // input branch_check,
     output reg [3:0] alu_code,
     output reg RAM_read,
     output reg Reg_read,
     output reg Reg_write,
     output reg pc_jump,
-    output reg pc_branch,
     output reg [1:0] reg1,
     output reg [1:0] reg2,
     output reg [7:0] RAM_adr
@@ -24,7 +23,6 @@ always @(*)begin
     Reg_read = 1;
     Reg_write = 0;
     pc_jump = 0;
-    pc_branch = 0;
     reg1 = 2'bx;
     reg2 = 2'bx;
     RAM_adr = 8'bx;
@@ -56,11 +54,16 @@ always @(*)begin
         4'b1111, 4'b1101, 4'b1110: begin  //BRANCH
             alu_code = opcode; // sends the branch opcode to the ALU and 
             reg1 = rs1; //reg 1
-            reg2 = rs2; //reg 2
-            if(branch_check)begin  //the ALU checks if the two registers are equal/greater/less and then sends the pc_branch back
-                pc_branch = 1; //signal to PC
-                RAM_adr = adr; // adress to skip to
-            end
+            reg2 = rs2;
+            RAM_read = 0;
+            RAM_adr = adr; //reg 2
+            // if(branch_check)begin  //the ALU checks if the two registers are equal/greater/less and then sends the pc_branch back
+            //     pc_branch = 1;
+            //     Reg_read = 0; //signal to PC
+            //     RAM_adr = adr; // adress to skip to
+            // end else begin
+            //     pc_branch = 0;
+            // end
             
 
         end

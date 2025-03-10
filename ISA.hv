@@ -6,4 +6,7 @@ parameter BRANCH = 4'b1100;
 
 
 
-Fixed the issue with the current instruction and the RAM_adress. Now I need to work on making the ALU and the register file work together better when there is a ADD instruciton, since the ALU already is storing previous reg_data values and the reg_write is 1.
+Everything works excpet for branch. The branch check is never intialized and it doesnt work. 
+
+
+GAMEPLAN: Think of adding a intiialization for branch_check in the ALU for reset

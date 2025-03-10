@@ -6,19 +6,19 @@ module ALU_tb;
     reg [15:0] reg_data1;
     reg [15:0] reg_data2;
     wire [15:0] accum;
-    wire branch_check;
+    wire pc_branch;
 
     ALU uut(
         .alu_code(alu_code),
         .reg_data1(reg_data1),
         .reg_data2(reg_data2),
         .accum(accum),
-        .branch_check(branch_check)
+        .pc_branch(pc_branch)
     );
 
     initial begin
-        $monitor("Time=%0t | alu_code=%b | reg1=%b | reg2=%b | accum=%b | branch_check=%b",
-                  $time, alu_code, reg_data1, reg_data2, accum, branch_check);    
+        $monitor("Time=%0t | alu_code=%b | reg1=%b | reg2=%b | accum=%b | pc_branch=%b",
+                  $time, alu_code, reg_data1, reg_data2, accum, pc_branch);    
     
         alu_code = 4'b1000;
         reg_data1 = 16'b0000000000000001;
@@ -51,7 +51,7 @@ module ALU_tb;
         alu_code = 4'b1110;
         reg_data1 = 16'b0000000000000011;
         reg_data2 = 16'b0000000000000001;
-
+        #10;
         $finish;
 
     end

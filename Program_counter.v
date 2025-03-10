@@ -25,7 +25,7 @@ always @(posedge clk)
     end
 
 always @(program) begin
-    address <= program; //output is the program adress register
+    address = program; //output is the program adress register
 end
 
 endmodule
