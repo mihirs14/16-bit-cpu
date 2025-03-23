@@ -1,6 +1,5 @@
 module Control_unit(
     input [15:0] instruction,
-    // input branch_check,
     output reg [3:0] alu_code,
     output reg RAM_read,
     output reg Reg_read,
@@ -29,43 +28,34 @@ always @(*)begin
 
     case(opcode)
         4'b0000: begin  //ADD
-            alu_code = 4'b1000; //The alu code for the ALU  // This enables the registers to read the two registers that are needed to addition
-            Reg_write = 1; //The result of the addition will be stored in the first register value
-            reg1 = rs1; // register adress 1
-            reg2 = rs2; // register adress 2
+            alu_code = 4'b1000; 
+            Reg_write = 1; 
+            reg1 = rs1; 
+            reg2 = rs2; 
         end
         4'b0010: begin //SUB
-            alu_code = 4'b0100; //The alu code for the ALU// This enables the registers to read the two registers that are needed to subtraction
-            Reg_write = 1; //The result of the addition will be stored in the first register value
-            reg1 = rs1; //register adress 1
-            reg2 = rs2; //register adress 2
+            alu_code = 4'b0100; 
+            Reg_write = 1; 
+            reg1 = rs1;
+            reg2 = rs2; 
         end
         4'b0100: begin //LOAD
-            alu_code = 4'b1001;   // enables the ram to read the data to load
-            Reg_write = 1; // enables to register to get ready to store the value 
-            reg1 = rs1; // register at which its being stored
-            RAM_adr = adr; //adress at the ram that is being read
+            alu_code = 4'b1001;   
+            Reg_write = 1; 
+            reg1 = rs1; 
+            RAM_adr = adr; 
         end
         4'b1000: begin //JUMP
             pc_jump = 1;
-            Reg_read = 0; //signal to PC
-            RAM_adr = adr; //adress to jump to
+            Reg_read = 0; 
+            RAM_adr = adr; 
         end
         4'b1111, 4'b1101, 4'b1110: begin  //BRANCH
-            alu_code = opcode; // sends the branch opcode to the ALU and 
-            reg1 = rs1; //reg 1
+            alu_code = opcode; 
+            reg1 = rs1; 
             reg2 = rs2;
             RAM_read = 0;
-            RAM_adr = adr; //reg 2
-            // if(branch_check)begin  //the ALU checks if the two registers are equal/greater/less and then sends the pc_branch back
-            //     pc_branch = 1;
-            //     Reg_read = 0; //signal to PC
-            //     RAM_adr = adr; // adress to skip to
-            // end else begin
-            //     pc_branch = 0;
-            // end
-            
-
+            RAM_adr = adr; 
         end
 
     endcase

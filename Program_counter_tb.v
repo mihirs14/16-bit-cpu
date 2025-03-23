@@ -18,8 +18,8 @@ module Program_counter_tb;
     );
 
     initial begin
-        clk = 0;      // Ensure clk starts at 0
-        reset = 1;    // Activate reset initially
+        clk = 0;      
+        reset = 1;    
         jump = 0;
         jump_adr = 8'b00000000; 
         branch = 0;

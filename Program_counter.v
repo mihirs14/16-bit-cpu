@@ -8,24 +8,24 @@ module Program_counter(
     output reg [7:0] address
 );
 
-reg [7:0] program; //register where the current RAM adress is loaded after each clock cycle
+reg [7:0] program; 
 
 always @(posedge clk)
     if(reset) begin
         program <= 8'b00000000;
     end
-    else if(jump)begin //Handles the case if the current instrcution is jump and skips to input adress
-        program <= jump_adr;
+    else if(jump)begin
+        program <= jump_adr; 
     end
-    else if(branch)begin //Handles the case if the current instrcution is branch and skips to input adress
+    else if(branch)begin 
         program <= branch_adr;
     end
     else begin
-        program <= program + 1; //Normal 1 incrementer
+        program <= program + 1; 
     end
 
 always @(program) begin
-    address = program; //output is the program adress register
+    address = program; 
 end
 
 endmodule

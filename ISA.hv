@@ -3,10 +3,3 @@ parameter SUB = 4'b0010;
 parameter LOAD = 4'b0100;
 parameter JUMP = 4'b1000;
 parameter BRANCH = 4'b1100;
-
-
-
-Everything works excpet for branch. The branch check is never intialized and it doesnt work. 
-
-
-GAMEPLAN: Think of adding a intiialization for branch_check in the ALU for reset

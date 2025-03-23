@@ -57,7 +57,7 @@ module Register_file_tb;
         read_en = 1;
         read_adr1 = 2'b10;
         #10;
-        #200
+        #200;
         $finish;
 
     end

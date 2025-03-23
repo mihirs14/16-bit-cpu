@@ -3,8 +3,6 @@
 module control_unit_tb;
 
     reg [15:0] instruction;
-    // reg branch_check;
-
     wire [3:0] alu_code;
     wire RAM_read;
     wire Reg_read;
@@ -45,8 +43,6 @@ module control_unit_tb;
 
         instruction = 16'b0100110100000000; 
         #10;
-        #10;
-
         
         $finish;
     end

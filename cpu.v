@@ -1,7 +1,3 @@
-//Edit this file massively.
-// Need to define what is constant value and first fill them out,
-//then decide which isn't a constant value and fill those out
-
 `timescale 1ns / 1ps
 
 module cpu(
@@ -34,10 +30,10 @@ module cpu(
     wire [15:0] RAM_output;
     
     RAM ram(
-        .clk(clk), //consant
-        .read(RAM_read), //constant
+        .clk(clk), 
+        .read(RAM_read), 
         .adr(RAM_adress),
-        .pc_adr(pc_address), //the definition of not constant
+        .pc_adr(pc_address), 
         .out(RAM_output),
         .pc_out(current_instruction) 
     );

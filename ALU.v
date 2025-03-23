@@ -39,27 +39,3 @@ end
 
 endmodule
 
-// always @(posedge clk) begin
-// branch_check <= 0;
-//     case(alu_code)
-//         4'b1111: begin
-//             if(reg_data1 == reg_data2) begin
-//                 branch_check <= 1;
-//             end
-//         end
-//         4'b1101: begin
-//             if(reg_data1 < reg_data2) begin
-//                 branch_check <= 1;
-//             end
-//         end
-//         4'b1110: begin
-//             if(reg_data1 > reg_data2) begin
-//                 branch_check <= 1;
-//             end
-//         end
-//         default: begin
-//             branch_check <= 0;
-//         end
-//     endcase
-
-// end    
