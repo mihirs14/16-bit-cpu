@@ -51,4 +51,10 @@ module Program_counter_tb;
 
     end
 
+    initial begin
+    	$dumpfile("program_counter.vcd"); 
+    	$dumpvars(1, clk, reset, jump, jump_adr, branch, branch_adr, 							address);
+      	#200;
+	end
+
 endmodule

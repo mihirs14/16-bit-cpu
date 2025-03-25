@@ -55,5 +55,11 @@ module ALU_tb;
         $finish;
 
     end
+  
+  	initial begin
+      $dumpfile("ALU.vcd"); 
+      $dumpvars(1, alu_code, reg_data1, reg_data2, accum, pc_branch);
+      #200;
+	end
 
 endmodule

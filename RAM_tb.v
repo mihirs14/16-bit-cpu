@@ -30,22 +30,31 @@ module RAM_tb;
 
 
     initial begin
-        $monitor("Time=%0t | read=%b | adr=%b | pc_adr=%b | out=%b | pc_out=%b",
-                   $time, read, adr, pc_adr, out, pc_out );
+        $monitor("Time=%0t | read=%b | adr=%b | pc_adr=%b | out=%b pc_out=%b",
+            $time, read, adr, pc_adr, out, pc_out );
         read = 1;
+      	#10;
         adr = 8'b00000000;
         pc_adr = 8'b00000010;
         #10;
         read = 0;
+      	adr = 8'b00000010;
+        pc_adr = 8'b00000011;
         #10;
         read = 1;
         adr = 8'b00000001;
-        pc_adr = 8'b00000011;
+        pc_adr = 8'b00000010;
         #10;
         #200;
         $finish;
 
     end
+  
+  	initial begin
+      $dumpfile("RAM.vcd"); 
+      $dumpvars(1, clk, read, adr, pc_adr, out, 									pc_out);
+      	#200;
+	end
 
 
 endmodule

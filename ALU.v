@@ -1,7 +1,4 @@
 module ALU (
-
-    input clk,
-    input reset,
     input [3:0] alu_code,
     input [15:0] reg_data1,
     input [15:0] reg_data2,
