@@ -26,25 +26,37 @@ module control_unit_tb;
 
     initial begin
         // Monitor values
-        $monitor("Time=%0t | Instr=%b | ALU=%b | R_Read=%b | R_Write=%b | Jmp=%b | Reg1=%b | Reg2=%b | RAM_Adr=%b | RAM_read=%b", 
+      $monitor("Time=%0t | Instr=%b | ALU=%b | Reg_Read=%b | Reg_Write=%b | Jmp=%b | Reg1=%b | Reg2=%b | RAM_Adr=%b | RAM_read=%b", 
                   $time, instruction, alu_code, Reg_read, Reg_write, pc_jump, reg1, reg2, RAM_adr, RAM_read);
         
-        instruction = 16'b0100110100000000; 
+        instruction = 16'b0100100000000000; 
         #10;
 
-        instruction = 16'b0100110100000000; 
+        instruction = 16'b0000110100000000; 
         #10;
 
-        instruction = 16'b0100110100000000; 
+        instruction = 16'b0010011100000000; 
         #10;
 
-        instruction = 16'b0100110100000000; 
+        instruction = 16'b1000000000000100; 
         #10;
 
-        instruction = 16'b0100110100000000; 
+        instruction = 16'b1111110100000000; 
+        #10;
+      
+      	instruction = 16'b1101100000000000; 
+        #10;
+      
+      	instruction = 16'b1110110000000000; 
         #10;
         
         $finish;
+    end
+  
+  	initial begin
+      $dumpfile("Control_Unit.vcd");
+      $dumpvars(1,instruction, alu_code, Reg_read, Reg_write, pc_jump, reg1, 					reg2, RAM_adr, RAM_read);
+      #200;
     end
 
 endmodule
