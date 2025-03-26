@@ -46,10 +46,12 @@ Random Access Memory(RAM): The RAM module is a register of 256 entries of 16 bit
                            The RAM has two output channels that are the corresponding instruction stored in the RAM module with the inputs being the index
 
 Register File(RF): The register file module is the section that stores the data of 4 registers that the cpu works with. The register file is 4 entries of 16 bit binary numbers. The reg-
-                   ister file has inputs had a read-enable signal and two read input addresses of the register when the CPU needs to read data from a certain register, and the two outputs
-                   corresponding to that data. It also has write-enable input signal and input address and data when it needs to store a value at one of the registers.
+                   ister file has inputs had a read-enable signal and two read input addresses of the register when the CPU needs to read data from a certain register, and the two                          outputs corresponding to that data. It also has write-enable input signal and input address and data when it needs to store a value at one of the registers.
 
-Control Unit(CU): 
+Control Unit(CU): The control unit is responsible for processing and decoding the intrsutcion, and sending the appropiate signals to all the other components in order to execute the 
+                  instruction. When the cpu is on the current instrcution it is sent to the control unit. The control unit starts by analying the opcode of the instruction or the first
+                  4 bits [(opcode)xxxx]xxxxxxxxxxxx. Depending on the opcode it will then send the appropiate signals by setting its different outputs equal to specific values for the 
+                  cpu to execute it. A deeper explanation of all the outputs and the inputs is explained in the additional document section
 
 Arithmetic Logic Unit(ALU): The Arithmetic Logic Unit module is used to handle all of the computations and comparisons that the CPU needs to perfrom based on the instruction. The ALU
                             handles the addition and the subtraction of two binary numbers when the instruction is asked to add two registers. It recives the data as inputs and outputs
