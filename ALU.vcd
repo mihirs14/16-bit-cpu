@@ -1,0 +1,63 @@
+$date
+	Thu Mar 27 00:53:03 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module ALU_tb $end
+$var reg 4 ! alu_code [3:0] $end
+$upscope $end
+$scope module ALU_tb $end
+$var reg 16 " reg_data1 [15:0] $end
+$upscope $end
+$scope module ALU_tb $end
+$var reg 16 # reg_data2 [15:0] $end
+$upscope $end
+$scope module ALU_tb $end
+$var wire 16 $ accum [15:0] $end
+$upscope $end
+$scope module ALU_tb $end
+$var wire 1 % pc_branch $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+0%
+b1000000 $
+b111111 #
+b1 "
+b1000 !
+$end
+#10000
+b111110 $
+b1 #
+b111111 "
+b100 !
+#20000
+b0 $
+b1 "
+b1100 !
+#30000
+b11 #
+#40000
+1%
+b1101 !
+#50000
+0%
+b1 #
+b11 "
+#60000
+b11 #
+b1 "
+b1110 !
+#70000
+1%
+b1 #
+b11 "
+#280000

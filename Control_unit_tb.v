@@ -49,6 +49,7 @@ module control_unit_tb;
       
       	instruction = 16'b1110110000000000; 
         #10;
+        #200;
         
         $finish;
     end

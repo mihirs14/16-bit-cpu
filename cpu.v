@@ -1,5 +1,3 @@
-`timescale 1ns / 1ps
-
 module cpu(
     input clk,
     input reset
@@ -67,8 +65,6 @@ module cpu(
     );
 
     ALU alu(
-        .clk(clk),
-        .reset(reset),
         .alu_code(alu_code),
         .reg_data1(reg_1_data),
         .reg_data2(reg_2_data),

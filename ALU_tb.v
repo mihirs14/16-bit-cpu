@@ -52,6 +52,7 @@ module ALU_tb;
         reg_data1 = 16'b0000000000000011;
         reg_data2 = 16'b0000000000000001;
         #10;
+        #200;
         $finish;
 
     end

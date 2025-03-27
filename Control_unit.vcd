@@ -1,0 +1,98 @@
+$date
+	Thu Mar 27 00:53:59 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module control_unit_tb $end
+$var reg 16 ! instruction [15:0] $end
+$upscope $end
+$scope module control_unit_tb $end
+$var wire 4 " alu_code [3:0] $end
+$upscope $end
+$scope module control_unit_tb $end
+$var wire 1 # Reg_read $end
+$upscope $end
+$scope module control_unit_tb $end
+$var wire 1 $ Reg_write $end
+$upscope $end
+$scope module control_unit_tb $end
+$var wire 1 % pc_jump $end
+$upscope $end
+$scope module control_unit_tb $end
+$var wire 2 & reg1 [1:0] $end
+$upscope $end
+$scope module control_unit_tb $end
+$var wire 2 ' reg2 [1:0] $end
+$upscope $end
+$scope module control_unit_tb $end
+$var wire 8 ( RAM_adr [7:0] $end
+$upscope $end
+$scope module control_unit_tb $end
+$var wire 1 ) RAM_read $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+1)
+b0 (
+bx '
+b10 &
+0%
+1$
+1#
+b1001 "
+b100100000000000 !
+$end
+#10000
+b1 '
+bx (
+b11 &
+1$
+b1000 "
+b110100000000 !
+#20000
+b11 '
+b1 &
+1$
+b100 "
+b10011100000000 !
+#30000
+b100 (
+0#
+1%
+bx '
+bx &
+0$
+bx "
+b1000000000000100 !
+#40000
+0)
+b1 '
+b11 &
+b1111 "
+b0 (
+0%
+1#
+b1111110100000000 !
+#50000
+b0 (
+b0 '
+b10 &
+0)
+b1101 "
+b1101100000000000 !
+#60000
+b0 (
+b0 '
+b11 &
+0)
+b1110 "
+b1110110000000000 !
+#270000
