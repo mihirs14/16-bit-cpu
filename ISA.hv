@@ -1,5 +1,7 @@
+opcode header file
+
 parameter ADD = 4'b0000;
 parameter SUB = 4'b0010; 
 parameter LOAD = 4'b0100;
 parameter JUMP = 4'b1000;
-parameter BRANCH = 4'b1100;
+parameter BRANCH = 4'b1111 or 4'b1110 or 4'b1101;

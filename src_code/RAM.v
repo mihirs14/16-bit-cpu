@@ -1,5 +1,6 @@
+//RAM Implementation
+
 module RAM (
-    input clk,
     input read,
     input [7:0] adr,
     input [7:0] pc_adr,

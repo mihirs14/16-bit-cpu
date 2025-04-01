@@ -1,3 +1,5 @@
+// ALU Implamentation
+
 module ALU (
     input [3:0] alu_code,
     input [15:0] reg_data1,

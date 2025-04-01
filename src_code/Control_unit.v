@@ -1,3 +1,5 @@
+// Control unit Implamentation
+
 module Control_unit(
     input [15:0] instruction,
     output reg [3:0] alu_code,

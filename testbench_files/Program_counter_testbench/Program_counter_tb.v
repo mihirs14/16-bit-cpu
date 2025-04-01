@@ -1,3 +1,5 @@
+// Program counter Testbench Implamentation
+
 module Program_counter_tb;
     reg clk;
     reg reset;

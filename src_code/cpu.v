@@ -1,3 +1,5 @@
+// cpu Implementation
+
 module cpu(
     input clk,
     input reset
@@ -27,8 +29,7 @@ module cpu(
     
     wire [15:0] RAM_output;
     
-    RAM ram(
-        .clk(clk), 
+    RAM ram( 
         .read(RAM_read), 
         .adr(RAM_adress),
         .pc_adr(pc_address), 

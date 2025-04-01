@@ -1,3 +1,5 @@
+// RAM Testbench Implamentation
+
 `timescale 1ns / 1ps
 
 module RAM_tb;
