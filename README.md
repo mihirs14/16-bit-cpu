@@ -4,7 +4,7 @@
 ## Project Overview:
 
 - This project is the implamentation of a CPU designed in verilog that processes 16-bit instructions. The CPU is integrated to handle simple instructions: ADD, SUB, LOAD, JUMP and BRANCH
-  and works with a RAM memory system for the data and instruction. It is capaable of performing simple arithmitic, loading/reading data into registers/memory, and jumping/branching
+  and works with a RAM memory system for the data and instruction. It is capable of performing simple arithmitic, loading/reading data into registers/memory, and jumping/branching
   instrcutions based on conditional requirments. The architecture of the CPU follows a simple fetch-decode-execute style where the results are stored in registers and memory.
 - The main goal of this project was to demonstrate and apply my skills in Digital Logic Design, CPU/Computer architecture, Verilog/VDHL, and hardare verificaiton. After completinign this
   project my understanding in these concepts have deepend and it sets a foundation for me to persue further tasks and knowledge into VLSI, CPU architecture, and digital systems design.
@@ -51,7 +51,7 @@ Register File(RF): The register file module is the section that stores the data 
 Control Unit(CU): The control unit is responsible for processing and decoding the intrsutcion, and sending the appropiate signals to all the other components in order to execute the 
                   instruction. When the cpu is on the current instrcution it is sent to the control unit. The control unit starts by analying the opcode of the instruction or the first
                   4 bits [(opcode)xxxx]xxxxxxxxxxxx. Depending on the opcode it will then send the appropiate signals by setting its different outputs equal to specific values for the 
-                  cpu to execute it. A deeper explanation of all the outputs and the inputs is explained in the additional document section
+                  cpu to execute it. These outputs are then sent to the register file or any other module that needs specific data for the CPU to accurately execute the instruction. 
 
 Arithmetic Logic Unit(ALU): The Arithmetic Logic Unit module is used to handle all of the computations and comparisons that the CPU needs to perfrom based on the instruction. The ALU
                             handles the addition and the subtraction of two binary numbers when the instruction is asked to add two registers. It recives the data as inputs and outputs
@@ -65,10 +65,10 @@ Arithmetic Logic Unit(ALU): The Arithmetic Logic Unit module is used to handle a
 project/
 │
 ├── README.md
-├── docs/          # architecture diagram
-├── src/           # Source code for the CPU modules
-├── testbenches/   # Testbenches for various modules
-├── simulation/    # Simulation results of modules
+├── additional docs/          # architecture diagram
+├── src_code/           # Source code for the CPU modules
+├── testbench_files/   # Testbenches for various modules
+├── sim_results/    # Simulation results of modules
 
 
 
