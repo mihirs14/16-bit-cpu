@@ -3,7 +3,7 @@
 
 ## Project Overview:
 
-- This project is the implamentation of a CPU designed in verilog that processes 16-bit instructions. The CPU is integrated to handle simple instructions: ADD, SUB, LOAD, JUMP and BRANCH
+- This project is the implementation of a CPU designed in verilog that processes 16-bit instructions. The CPU is integrated to handle simple instructions: ADD, SUB, LOAD, JUMP and BRANCH
   and works with a RAM memory system for the data and instruction. It is capable of performing simple arithmitic, loading/reading data into registers/memory, and jumping/branching
   instrcutions based on conditional requirments. The architecture of the CPU follows a simple fetch-decode-execute style where the results are stored in registers and memory.
 - The main goal of this project was to demonstrate and apply my skills in Digital Logic Design, CPU/Computer architecture, Verilog/VDHL, and hardare verificaiton. After completinign this
